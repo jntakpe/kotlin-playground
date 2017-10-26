@@ -1,9 +1,20 @@
 package playground.kotlin
 
 import playground.java.Color
-import rx.Observable
 
 class Weather {
+
+    fun smartCast(x: Any) = when (x) {
+        is Int -> print(x + 1)
+        is String -> print(x.length + 1)
+        is IntArray -> println(x.sum())
+        else -> println(0)
+    }
+
+    fun createUserInfo() {
+        UserInfo(name = "SuperUser", isAdmin = true)
+        UserInfo(uuid = "123456", name = "User", notes = "Standard user")
+    }
 
     fun updateWeather(degrees: Int) {
         val description: String
